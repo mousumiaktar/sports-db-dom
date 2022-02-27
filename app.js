@@ -1,13 +1,19 @@
 const allplayers = () => {
+    document.getElementById('player-container').innerHTML = '';
+    // document.getElementById('spiner').style.display = 'block';
    const searchValue = document.getElementById('search-box').value;
    const url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${searchValue}`;
    fetch(url)
    .then(res => res.json())
    .then(data => showPlayerDetails(data.player));
 //    console.log(url);
-}
+};
 
 const showPlayerDetails = (players) => {
+    // if(players) {
+    //     document.getElementById('spiner').style.display = 'block';
+    // }
+
     for(const player of players){
         // console.log(player);
     const parent = document.getElementById('player-container');
